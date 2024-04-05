@@ -5,8 +5,7 @@ import glob
 def has_function(code):
     tree = ast.parse(code)
     for node in ast.walk(tree):
-        print(node)
-        node.
+        # print(node)
         if isinstance(node, ast.FunctionDef):
             return True
     return False

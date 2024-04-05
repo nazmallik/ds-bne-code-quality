@@ -6,6 +6,8 @@ flake8-docstrings
 flake8-annotations
 ipyfilechooser
 isort
+mypy
+nbqa
 pytest
 pytest-cov
 setuptools

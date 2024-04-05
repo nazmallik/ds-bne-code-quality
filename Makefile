@@ -13,7 +13,22 @@ check:
 	@echo Check code for
 	python -m flake8 --docstring-convention=google src/ tests/
 
+	@echo Running static checker
+	mypy src/ tests/
 
+.PHONY: check-notebook
+check-notebook:
+	@echo Code style checking and linting
+	nbqa isort notebooks
+
+	@echo Format code. Manage indents, break lines exceeding max line lengths
+	nbqa black --line-length=80 notebooks
+
+	@echo Check code for
+	nbqa flake8 --docstring-convention=google notebooks
+
+	@echo Running static checker
+	nbqa mypy notebooks
 
 
 .PHONY: test
