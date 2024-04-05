@@ -1,6 +1,5 @@
 # Developer tools and test/validation libraries
 black
-bump2version
 flake8
 flake8-docstrings
 flake8-annotations
