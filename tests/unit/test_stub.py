@@ -1,8 +1,10 @@
 """Test exif extraction."""
 
-import pytest
 
+def test_stub() -> None:
+    """Test stub.
 
-def test_stub():
-    """Test the Sequence EXIF tag."""
+    Returns:
+        True/False
+    """
     assert True
