@@ -1,10 +1,10 @@
 # ds-bne-code-quality
 
 This repository contains a Makefile to check and format code quality via several modules: 
-- `black`: formats code by fixing spacing and adding line-breaks where code exceeds the provided line-length limit   
-- `isort`: formats code by sorting imports at the beginning of .py files  
-- `flake8`: checks code for styling issues, complexity, function annotations and docstrings 
-- `mypy`: is a static checker. Checks whether functions are called appropriately with respect to their type definitions and any other bugs which can be detected before runtime 
+- [`black`](https://pypi.org/project/black/): formats code by fixing spacing and adding line-breaks where code exceeds the provided line-length limit   
+- [`isort`](https://github.com/PyCQA/isort): formats code by sorting imports at the beginning of .py files  
+- [`flake8`](https://flake8.pycqa.org/en/latest/): checks code for styling issues, complexity, function annotations and docstrings 
+- [`mypy`](https://mypy-lang.org/): is a static checker. Checks whether functions are called appropriately with respect to their type definitions and any other bugs which can be detected before runtime 
 
 ## Running the code quality checker
 The above modules can be run with the single make command*: 
