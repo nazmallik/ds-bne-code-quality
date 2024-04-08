@@ -12,7 +12,7 @@ The above modules can be run with the single make command*:
 # Runs linting and static checking on all .py source files
 make check
 ```
-*Note that you must have `make` installed to run the above command.  
+*Note that you must have `make` installed, and have run `pip install -r requirements-dev.txt` to run the above command.  
 
 ## Running the code quality checker on notebook files 
 The Makefile can also optionally run `nbqa` to run the above formatters, linters and static checkers on notebooks.
