@@ -5,7 +5,7 @@ import ast
 import glob
 import json
 from pathlib import Path
-from typing import List, Set
+from typing import List
 
 
 def has_function(code: str) -> bool:
@@ -58,7 +58,17 @@ def analyze_notebooks(notebook_paths: List[Path]) -> bool:
     return raise_error
 
 
-def get_notebook_paths(path_list:List[str])-> List[Path]:
+def get_notebook_paths(path_list: List[str]) -> List[Path]:
+    """Iterates over provided file and directory paths to provide a list of noteobook filepaths.
+
+    Removes any repeated filepaths before returning the list.
+
+    Args:
+        path_list (List[str]): List of paths and directories to scan for notebook files.
+
+    Returns:
+        List of unique notebook filepaths found in the paths provided.
+    """
     nb_path_list = []
     for p in path_list:
         path = Path(p)
@@ -67,9 +77,7 @@ def get_notebook_paths(path_list:List[str])-> List[Path]:
             nb_path_list.append(path)
 
         if path.is_dir():
-            notebook_paths = glob.glob(
-                f"{path}/**/*.ipynb", recursive=True
-            )
+            notebook_paths = glob.glob(f"{path}/**/*.ipynb", recursive=True)
             nb_path_list.extend([Path(nb_path) for nb_path in notebook_paths])
 
     return list(set(nb_path_list))
@@ -77,13 +85,15 @@ def get_notebook_paths(path_list:List[str])-> List[Path]:
 
 if __name__ == "__main__":
     # Initialize parser
-    parser = argparse.ArgumentParser(description='Scan provided notebook files for defined functions')
+    parser = argparse.ArgumentParser(
+        description="Scan provided notebook files for defined functions"
+    )
 
     parser.add_argument(
         "nb_paths",
-        nargs='+',
+        nargs="+",
         type=str,
-        help="Paths or directories of notebooks to analyse."
+        help="Paths or directories of notebooks to analyse.",
     )
     args = parser.parse_args()
 
