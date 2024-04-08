@@ -27,5 +27,5 @@ For this reason, running `make check-notebook` will also log which notebooks cel
 python src/notebook_analyser.py notebooks
 notebook_analyser: notebooks\has_functions.ipynb has function in cell number 1
 notebook_analyser: notebooks\has_functions.ipynb has function in cell number 2
-make: [Makefile:12: check] Error 
+make: [Makefile:22: check] Error 
 ```
