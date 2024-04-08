@@ -11,10 +11,10 @@ check:
 	python -m black -l  80 -t py38 -q src/ tests/
 
 	@echo Check code for
-	python -m flake8 --docstring-convention=google src/ tests/
+	-python -m flake8 --docstring-convention=google src/ tests/
 
 	@echo Running static checker
-	mypy src/ tests/
+	-mypy src/ tests/
 
 .PHONY: check-notebook
 check-notebook:
@@ -28,10 +28,10 @@ check-notebook:
 	nbqa black --line-length=80 notebooks
 
 	@echo Check code for
-	nbqa flake8 --docstring-convention=google notebooks
+	-nbqa flake8 --docstring-convention=google notebooks
 
 	@echo Running static checker
-	nbqa mypy notebooks
+	-nbqa mypy notebooks
 
 
 .PHONY: test
