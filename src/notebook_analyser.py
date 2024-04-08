@@ -25,7 +25,7 @@ def has_function(code: str) -> bool:
     return False
 
 
-def analyze_notebooks(notebook_paths: List[str]) -> bool:
+def analyze_notebooks(notebook_paths: List[Path]) -> bool:
     """Iterates over provided notebook paths and checks whether any notebook code cells contain function definitions.
 
     Args:
@@ -88,7 +88,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     nb_paths = get_notebook_paths(args.nb_paths)
-    print(nb_paths)
 
     contains_functions = analyze_notebooks(nb_paths)
     if contains_functions:

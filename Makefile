@@ -19,7 +19,7 @@ check:
 .PHONY: check-notebook
 check-notebook:
 	@echo Checking for presence of functions in notebooks
-	python src/notebook_analyser.py --nb-directory notebooks
+	-python src/notebook_analyser.py notebooks
 
 	@echo Code style checking and linting
 	nbqa isort notebooks
